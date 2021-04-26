@@ -323,6 +323,16 @@
 
     <!-- Optional JavaScript; choose one of the two! -->
     
+    <!-- Code to play only one audio file at a time starts here -->
+    <script>
+        window.addEventListener("play", function (evt) {
+            if (window.$_currentlyPlaying && window.$_currentlyPlaying != evt.target) {
+                window.$_currentlyPlaying.pause();
+            }
+            window.$_currentlyPlaying = evt.target;
+        }, true);
+    </script>
+    <!-- Code to play only one audio file at a time ends here -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
